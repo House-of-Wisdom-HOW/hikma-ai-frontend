@@ -14,8 +14,9 @@ function Nav() {
 
       {/* TODO: set active links */}
       <div className="list">
-        <NavLink className="link" style={({ isActive }) => (isActive ? { color: '#FFFFFF' } : { color: '#FFFFFF' })} to="/">Home</NavLink>
-        <NavLink className="link" style={({ isActive }) => (isActive ? { color: '#FFFFFF' } : { color: '#FFFFFF' })} to="/">Add</NavLink>
+        <NavLink className="link" style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })} to="/">Home</NavLink>
+        <NavLink className="link" style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })} to="/about">About</NavLink>
+        <NavLink className="link" style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })} to="/add">Add</NavLink>
       </div>
     </nav>
   );
