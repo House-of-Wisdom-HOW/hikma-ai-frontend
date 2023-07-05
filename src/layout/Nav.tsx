@@ -1,7 +1,7 @@
-import { Typography, AppBar, Toolbar, Button, Box } from '@mui/material';
+import { Typography, AppBar, Toolbar, Box } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { NavLink } from 'react-router-dom';
 import logo from '../pics/logo.png';
+import NavButton from '../components/NavButton';
 
 function Nav() {
   const theme = createTheme({
@@ -23,11 +23,11 @@ function Nav() {
           <Box className='h-16 w-16 mr-2' component='img' src={logo} alt="book" />
           <Typography className='grow' component='div' variant='h4' color='secondary'>Hikma AI</Typography>
 
-          {/* nav links warpped around a button */}
+          {/* nav links */}
           <Box>
-            <Button color='secondary'><NavLink style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })} to="/">Home</NavLink></Button>
-            <Button color='secondary'><NavLink style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })} to="/about">About</NavLink></Button>
-            <Button color='secondary'><NavLink style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })} to="/add">Add</NavLink></Button>
+            <NavButton to="/">Home</NavButton>
+            <NavButton to="/about">About</NavButton>
+            <NavButton to="/add">Add</NavButton>
           </Box>
         </Toolbar>
       </AppBar>
