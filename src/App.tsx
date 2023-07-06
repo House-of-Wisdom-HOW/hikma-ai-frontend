@@ -1,9 +1,9 @@
-import './App.css';
+import Nav from './layout/Nav';
 
-function App() {
+function App () {
   return (
     <div className="App">
-      App
+      <Nav />
     </div>
   );
 }
