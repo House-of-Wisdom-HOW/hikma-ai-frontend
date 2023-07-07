@@ -1,4 +1,4 @@
-import { Typography, Card, CardActionArea, CardMedia, CardContent } from '@mui/material';
+import { Grid, Typography, Card, CardActionArea, CardMedia, CardContent } from '@mui/material';
 
 interface Props {
   src: string
@@ -9,23 +9,25 @@ interface Props {
 
 function Article({ src, alt, title, description }: Props) {
   return (
-    <Card color='primary'>
-      <CardActionArea>
-        <CardMedia
-          component='img'
-          image={src}
-          alt={alt}
-        />
-        <CardContent>
-          <Typography gutterBottom variant='h5' component='div'>
-            {title}
-          </Typography>
-          <Typography variant='body2'>
-            {description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <Grid item xs={4}>
+      <Card>
+        <CardActionArea>
+          <CardMedia
+            component='img'
+            image={src}
+            alt={alt}
+          />
+          <CardContent>
+            <Typography gutterBottom variant='h5' component='div'>
+              {title}
+            </Typography>
+            <Typography variant='body2'>
+              {description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Grid>
   );
 };
 
