@@ -2,6 +2,7 @@ import { Grid } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Nav from './layout/Nav';
 import SideBar from './layout/SideBar';
+import Main from './layout/Main';
 
 function App () {
   const theme = createTheme({
@@ -24,6 +25,9 @@ function App () {
 
         <Grid item xs={2}>
           <SideBar />
+        </Grid>
+        <Grid item xs={10}>
+          <Main />
         </Grid>
       </Grid>
     </ThemeProvider>
