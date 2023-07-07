@@ -9,19 +9,27 @@ interface Props {
 
 function Article({ src, alt, title, description }: Props) {
   return (
-    <Grid item xs={4}>
-      <Card>
-        <CardActionArea>
+    <Grid item xs={3}>
+      <Card
+        sx={{ backgroundColor: '#FAFAFA', boxShadow: '2px 3px 4px #e1b15d80' }}
+        className='text-center h-full w-9/12  mx-auto'
+      >
+        <CardActionArea
+          sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}
+          className='h-full'
+        >
           <CardMedia
+            className='p-px rounded'
+            sx={{ width: '100%', height: '11rem', objectFit: 'fill' }}
             component='img'
             image={src}
             alt={alt}
           />
-          <CardContent>
-            <Typography gutterBottom variant='h5' component='div'>
+          <CardContent className='w-full'>
+            <Typography variant='h6' component='div'>
               {title}
             </Typography>
-            <Typography variant='body2'>
+            <Typography variant='caption'>
               {description}
             </Typography>
           </CardContent>

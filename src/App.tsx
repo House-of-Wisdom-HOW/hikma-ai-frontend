@@ -18,7 +18,7 @@ function App () {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container spacing={1}>
+      <Grid container>
         <Grid item xs={12}>
           <Nav />
         </Grid>

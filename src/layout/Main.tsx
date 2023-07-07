@@ -4,6 +4,9 @@ import Article from '../components/Article';
 import drippi from '../pics/DrippiAi.png';
 import magicast from '../pics/MagicastAi.png';
 import poster from '../pics/PosterStudio.png';
+import codeConv from '../pics/codeConv.png';
+import vribble from '../pics/Vribble.png';
+import QR from '../pics/QR.png';
 
 const DUMMY_DATA = [
   {
@@ -27,6 +30,27 @@ const DUMMY_DATA = [
     description: 'A tool to generate ads and social creatives.',
     id: 3
   },
+  {
+    src: QR,
+    alt: 'QR-Art',
+    title: 'QR-Art',
+    description: 'A tool to generate customizable QR codes from images.',
+    id: 4
+  },
+  {
+    src: vribble,
+    alt: 'VribbleAI',
+    title: 'VribbleAI',
+    description: 'A tool to capture, store, and organize your thoughts and ideas.',
+    id: 5
+  },
+  {
+    src: codeConv,
+    alt: 'AI Code Converter',
+    title: 'AI Code Converter',
+    description: 'A tool to generate code and convert code from one programming language to another.',
+    id: 6
+  }
 ];
 
 function Main() {
@@ -40,7 +64,7 @@ function Main() {
         </Typography>
       </Box>
 
-      <Grid container>
+      <Grid container className='mt-10' rowGap={3} >
         {DUMMY_DATA.map(({ src, alt, title, description, id }) => (
           <Article src={src} alt={alt} title={title} description={description} key={id}/>
         ))}
