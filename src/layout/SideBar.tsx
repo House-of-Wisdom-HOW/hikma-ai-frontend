@@ -4,7 +4,7 @@ import FilterCheckbox from '../components/FilterCheckbox';
 
 function SideBar() {
   return (
-    <Box className='h-full border-r p-8' component='div'>
+    <Box className='h-full border-r p-8 avg:p-4 xl:p-6' component='div'>
       {/* Search box */}
       <TextField className='w-full' id='standard-basic' label='Search' variant='standard' color='primary' />
 

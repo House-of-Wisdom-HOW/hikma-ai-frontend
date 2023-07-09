@@ -23,10 +23,10 @@ function App () {
           <Nav />
         </Grid>
 
-        <Grid item xs={2}>
+        <Grid item xs={12} md={2}>
           <SideBar />
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={12} md={10}>
           <Main />
         </Grid>
       </Grid>
