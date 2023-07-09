@@ -12,7 +12,7 @@ function Article({ src, alt, title, description }: Props) {
     <Grid item xs={12} sm={6} md={4} lg={3}>
       <Card
         sx={{ backgroundColor: '#FAFAFA', boxShadow: '2px 3px 4px #e1b15d90' }}
-        className='text-center h-full mx-auto min-w-min 2xl:w-9/12 xl:w-10/12 sm:w-85 w-9/12'
+        className='text-center h-full mx-auto min-w-min 2xl:w-64 xl:w-10/12 sm:w-85 w-9/12'
       >
         <CardActionArea
           sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}
