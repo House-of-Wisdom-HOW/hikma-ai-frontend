@@ -1,7 +1,7 @@
 import { Typography, Box, Grid, IconButton } from '@mui/material';
 import SortIcon from '@mui/icons-material/Sort';
 import Article from '../components/Article';
-import DUMMY_DATA from '../data.json';
+import DUMMY_DATA from '../data/data.json';
 
 function Main() {
   return (

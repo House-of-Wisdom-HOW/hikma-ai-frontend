@@ -1,0 +1,22 @@
+[
+  {
+    "tag":"Quran",
+    "key": 1
+  },
+  {
+    "tag":"Hadith",
+    "key": 2
+  },
+  {
+    "tag":"Prayer",
+    "key": 3
+  },
+  {
+    "tag":"Education",
+    "key": 4
+  },
+  {
+    "tag":"History",
+    "key": 5
+  }
+]

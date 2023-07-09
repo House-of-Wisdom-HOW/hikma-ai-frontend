@@ -1,6 +1,7 @@
 import { TextField, FormGroup, Box, Typography } from '@mui/material';
 import { FilterList } from '@mui/icons-material';
 import FilterCheckbox from '../components/FilterCheckbox';
+import tags from '../data/tags.json';
 
 function SideBar() {
   return (
@@ -16,11 +17,9 @@ function SideBar() {
 
       {/* Filter checkboxes */}
       <FormGroup className='mt-2'>
-        <FilterCheckbox label='Quran'/>
-        <FilterCheckbox label='Hadith'/>
-        <FilterCheckbox label='Prayer'/>
-        <FilterCheckbox label='Education'/>
-        <FilterCheckbox label='History'/>
+        {tags.map(({ tag, key }) => (
+          <FilterCheckbox label={tag} key={key}/>
+        ))}
       </FormGroup>
     </Box>
   );
