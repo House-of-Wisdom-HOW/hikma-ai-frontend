@@ -4,7 +4,7 @@ interface Props {
   label: string
 }
 
-function FilterCheckbox({ ...props }: Props) {
+function FilterCheckbox(props: Props) {
   return (
     <FormControlLabel className='w-full' {...props} control={<Checkbox color='primary'/>} />
   );
