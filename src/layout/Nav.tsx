@@ -17,7 +17,6 @@ function Nav() {
   };
 
   return (
-    // flex sm:justify-between sm:flex-row flex-col text-center
     <Box sx={{ flexGrow: 1 }}>
       <AppBar className='py-1.5' component='div' position='sticky' >
         <Toolbar component="div">
@@ -46,6 +45,8 @@ function Nav() {
                 <MenuIcon />
               </IconButton>
           }
+
+          {/* mobile mode nav menu */}
           <Menu
             id="basic-menu"
             anchorEl={anchorEl}
