@@ -1,10 +1,11 @@
 import { TextField, FormGroup, Box, Typography } from '@mui/material';
 import { FilterList } from '@mui/icons-material';
 import FilterCheckbox from '../components/FilterCheckbox';
+import tags from '../data/tags.json';
 
 function SideBar() {
   return (
-    <Box className='h-screen border-r p-6 my-2' component='div'>
+    <Box className='h-full border-r p-8 avg:p-4 xl:p-6' component='div'>
       {/* Search box */}
       <TextField className='w-full' id='standard-basic' label='Search' variant='standard' color='primary' />
 
@@ -16,11 +17,9 @@ function SideBar() {
 
       {/* Filter checkboxes */}
       <FormGroup className='mt-2'>
-        <FilterCheckbox label='Quran'/>
-        <FilterCheckbox label='Hadith'/>
-        <FilterCheckbox label='Prayer'/>
-        <FilterCheckbox label='Education'/>
-        <FilterCheckbox label='History'/>
+        {tags.map(({ tag, id }) => (
+          <FilterCheckbox label={tag} key={id}/>
+        ))}
       </FormGroup>
     </Box>
   );

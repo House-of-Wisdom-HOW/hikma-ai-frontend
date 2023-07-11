@@ -1,0 +1,27 @@
+[
+  {
+    "tag":"Quran",
+    "description": null,
+    "id": 1
+  },
+  {
+    "tag":"Hadith",
+    "description": null,
+    "id": 2
+  },
+  {
+    "tag":"Prayer",
+    "description": null,
+    "id": 3
+  },
+  {
+    "tag":"Education",
+    "description": null,
+    "id": 4
+  },
+  {
+    "tag":"History",
+    "description": null,
+    "id": 5
+  }
+]
