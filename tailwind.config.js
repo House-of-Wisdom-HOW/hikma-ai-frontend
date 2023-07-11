@@ -16,7 +16,9 @@ module.exports = {
         sml: '0px 4px 4px #00000040',
       },
       spacing: {
-        85: '85%'
+        85: '85%',
+        650: '650px',
+        600: '600px'
       },
       screens: {
         sm: '600px',
