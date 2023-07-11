@@ -17,8 +17,8 @@ function SideBar() {
 
       {/* Filter checkboxes */}
       <FormGroup className='mt-2'>
-        {tags.map(({ tag, key }) => (
-          <FilterCheckbox label={tag} key={key}/>
+        {tags.map(({ tag, id }) => (
+          <FilterCheckbox label={tag} key={id}/>
         ))}
       </FormGroup>
     </Box>
