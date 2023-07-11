@@ -4,6 +4,7 @@ function List() {
   return (
     <Typography
           variant='body1'
+          className='text-left'
           sx={{
             '@media (max-width: 600px)': {
               fontSize: '0.9rem', // Adjust the font size for smaller screens

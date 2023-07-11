@@ -14,9 +14,11 @@ function About() {
       className='absolute top-0 flex justify-start items-start'
       component='div'>
       <Box
-        className='flex flex-col my-auto gap-4 sm:gap-8 justify-around p-4 sm:p-6 h-650 w-96 sm:w-600 rounded text-left sm:text-center bg-brown text-white'
+        className='flex flex-col my-auto gap-4 sm:gap-8 justify-around p-4
+        sm:p-6 h-650 w-96 sm:w-600 rounded text-left sm:text-center bg-brown text-white'
         component='div'
         sx={{
+          boxShadow: '5px 5px 8px #000000',
           '@media (max-width: 600px)': {
             width: '90vw',
             height: 'auto',
