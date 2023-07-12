@@ -12,16 +12,46 @@ interface SortOption {
 }
 
 const sortOptions: SortOption[] = [
-  { label: 'Latest', icon: <Schedule /> },
   { label: 'Oldest', icon: <Schedule /> },
+  { label: 'Latest', icon: <Schedule /> },
   { label: 'Name (A-Z)', icon: <ArrowDownward /> },
   { label: 'Name (Z-A)', icon: <ArrowUpward /> },
 ];
 
-function Main(): JSX.Element {
+function Main() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [selectedOption, setSelectedOption] = useState<string>('Latest');
+  const [selectedOption, setSelectedOption] = useState<string>('Oldest');
   const toolCount = DUMMY_DATA.length;
+  const [sortedData, setSortedData] = useState(DUMMY_DATA);
+
+  const sortData = (option: string) => {
+    const sortedResult = [...DUMMY_DATA];
+
+    switch (option) {
+      case 'Latest':
+        sortedResult.sort((a, b) => b.id - a.id); // Sort by descending order of id
+        break;
+      case 'Oldest':
+        sortedResult.sort((a, b) => a.id - b.id); // Sort by ascending order of id
+        break;
+      case 'Name (A-Z)':
+        sortedResult.sort((a, b) => a.title.localeCompare(b.title)); // Sort alphabetically by title (A-Z)
+        break;
+      case 'Name (Z-A)':
+        sortedResult.sort((a, b) => b.title.localeCompare(a.title)); // Sort alphabetically by title (Z-A)
+        break;
+      default:
+        break;
+    }
+
+    setSortedData(sortedResult);
+  };
+
+  const handleOptionSelect = (label: string) => {
+    setSelectedOption(label);
+    sortData(label); // Call the sortData function with the selected option
+    handleClose();
+  };
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -29,11 +59,6 @@ function Main(): JSX.Element {
 
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const handleOptionSelect = (label: string) => {
-    setSelectedOption(label);
-    handleClose();
   };
 
   return (
@@ -59,7 +84,7 @@ function Main(): JSX.Element {
       </Box>
 
       <Grid container className='mt-10' rowGap={6}>
-        {DUMMY_DATA.map(({ src, image, title, description, id }) => (
+        {sortedData.map(({ src, image, title, description, id }) => (
           <Article image={image} src={src} title={title} description={description} key={id} />
         ))}
       </Grid>
