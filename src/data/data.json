@@ -4,7 +4,7 @@
     "image": "https://global-uploads.webflow.com/63994dae1033718bee6949ce/649f3f286772ee18775d26f1_mby979eTPSDlRpr7H2MNSly1Sk-p-500.png",
     "title": "Drippi.ai",
     "description": "A tool to automate personalized Twitter outreach.",
-    "tags": [],
+    "tags": ["Quran", "Prayer"],
     "id": 1
   },
   {
@@ -12,7 +12,7 @@
     "image": "https://global-uploads.webflow.com/63994dae1033718bee6949ce/649f3f286772ee18775d247e_37fb17_eb0d4edb9003426e983cd6b5d7ca3700%257Emv2-p-500.png",
     "title": "Magicast.ai",
     "description": "A platform to generate personalized podcasts.",
-    "tags": [],
+    "tags": ["Quran", "Hadith"],
     "id": 2
   },
   {
@@ -20,7 +20,7 @@
     "image": "https://global-uploads.webflow.com/63994dae1033718bee6949ce/64a074519fd69120a90b8db2_posterstudio-ai-logo-p-500.png",
     "title": "Poster Studio",
     "description": "A tool to generate ads and social creatives.",
-    "tags": [],
+    "tags": ["Hadith", "History", "Education"],
     "id": 3
   },
   {
@@ -28,7 +28,7 @@
     "image": "https://global-uploads.webflow.com/63994dae1033718bee6949ce/648e329ebb90c8ba67d895ae_3-p-500.png",
     "title": "QR-Art",
     "description": "A tool to generate customizable QR codes from images.",
-    "tags": [],
+    "tags": ["Hadith", "Prayer", "Education"],
     "id": 4
   },
   {
@@ -36,7 +36,7 @@
     "image": "https://global-uploads.webflow.com/63994dae1033718bee6949ce/649e955e6137379b413d1b1d_vribble-ai-logo-p-500.png",
     "title": "VribbleAI",
     "description": "A tool to capture, store, and organize your thoughts and ideas.",
-    "tags": [],
+    "tags": ["Quran", "History"],
     "id": 5
   },
   {
@@ -44,7 +44,7 @@
     "image": "https://global-uploads.webflow.com/63994dae1033718bee6949ce/64a43fa1e4604c2e29585489_aicodeconvert-logo.png",
     "title": "AI Code Converter",
     "description": "A tool to generate code and convert code from one programming language to another.",
-    "tags": [],
+    "tags": ["Prayer"],
     "id": 6
   }
 ]

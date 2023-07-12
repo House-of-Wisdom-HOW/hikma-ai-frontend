@@ -1,4 +1,5 @@
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useContext } from 'react';
+import { TagContext } from '../TagContext';
 import { Typography, Box, Grid, IconButton, Menu, MenuItem, ListItemIcon } from '@mui/material';
 import SortIcon from '@mui/icons-material/Sort';
 import { Schedule, ArrowUpward, ArrowDownward } from '@mui/icons-material';
@@ -23,6 +24,8 @@ function Main() {
   const [selectedOption, setSelectedOption] = useState<string>('Oldest');
   const toolCount = DUMMY_DATA.length;
   const [sortedData, setSortedData] = useState(DUMMY_DATA);
+  const { selectedTags } = useContext(TagContext);
+  console.log(selectedTags);
 
   const sortData = (option: string) => {
     const sortedResult = [...DUMMY_DATA];
@@ -84,8 +87,8 @@ function Main() {
       </Box>
 
       <Grid container className='mt-10' rowGap={6}>
-        {sortedData.map(({ src, image, title, description, id }) => (
-          <Article image={image} src={src} title={title} description={description} key={id} />
+        {sortedData.map(({ id, ...props }) => (
+          <Article {...props} key={id} selectedTags={selectedTags}/>
         ))}
       </Grid>
     </Box>

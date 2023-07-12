@@ -5,12 +5,21 @@ interface Props {
   image: string
   title: string
   description: string
+  tags: string[]
+  selectedTags: string[]
 }
 
-function Article({ src, image, title, description }: Props) {
+function Article({ src, image, title, description, tags, selectedTags }: Props) {
   const handleCardClick = () => {
     window.open(src, '_blank');
   };
+
+  const allTagsIncluded = selectedTags.every((tag) => tags.includes(tag));
+
+  if (selectedTags.length > 0 && !allTagsIncluded) {
+    return null;
+  }
+
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
       <Card
