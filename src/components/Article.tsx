@@ -6,35 +6,15 @@ interface Props {
   title: string
   description: string
   tags: string[]
-  selectedTags: string[]
-  searchText: string
 }
 
-function Article({ src, image, title, description, tags, selectedTags, searchText }: Props) {
+function Article({ src, image, title, description, tags }: Props) {
+  // context for ToolCount
+
   // open article in new tab
   const handleCardClick = () => {
     window.open(src, '_blank');
   };
-
-  // display tags only in selectedTags
-  const allTagsIncluded = selectedTags.every((tag) => tags.includes(tag));
-  if (selectedTags.length > 0 && !allTagsIncluded) {
-    return null;
-  }
-
-  // display articles with relevance to the searchText
-  const someTextIncluded = () => {
-    searchText = searchText.toLowerCase();
-    const textInTag = tags.some((tag) => tag.toLowerCase().includes(searchText));
-    console.log(searchText);
-    const textInTitle = title.toLowerCase().includes(searchText);
-    const textInDescription = description.toLowerCase().includes(searchText);
-
-    return textInTag || textInDescription || textInTitle;
-  };
-  if (searchText.length > 0 && !someTextIncluded()) {
-    return null;
-  }
 
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>

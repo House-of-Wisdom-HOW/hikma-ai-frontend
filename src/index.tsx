@@ -15,7 +15,7 @@ root.render(
     <BrowserRouter>
       <TagProvider>
         <SearchProvider>
-          <App />
+            <App />
         </SearchProvider>
       </TagProvider>
     </BrowserRouter>
