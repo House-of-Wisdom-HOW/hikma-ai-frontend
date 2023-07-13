@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { TagProvider } from './TagContext';
+import { TagProvider } from './context/TagContext';
+import { SearchProvider } from './context/SearchContext';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -13,7 +14,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <TagProvider>
-        <App />
+        <SearchProvider>
+          <App />
+        </SearchProvider>
       </TagProvider>
     </BrowserRouter>
   </React.StrictMode>

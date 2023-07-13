@@ -1,5 +1,6 @@
-import { useState, MouseEvent, useContext } from 'react';
-import { TagContext } from '../TagContext';
+import { useState, MouseEvent, useContext, useEffect } from 'react';
+import { TagContext } from '../context/TagContext';
+import { SearchContext } from '../context/SearchContext';
 import { Typography, Box, Grid, IconButton, Menu, MenuItem, ListItemIcon } from '@mui/material';
 import SortIcon from '@mui/icons-material/Sort';
 import { Schedule, ArrowUpward, ArrowDownward } from '@mui/icons-material';
@@ -13,19 +14,21 @@ interface SortOption {
 }
 
 const sortOptions: SortOption[] = [
-  { label: 'Oldest', icon: <Schedule /> },
   { label: 'Latest', icon: <Schedule /> },
+  { label: 'Oldest', icon: <Schedule /> },
   { label: 'Name (A-Z)', icon: <ArrowDownward /> },
   { label: 'Name (Z-A)', icon: <ArrowUpward /> },
 ];
 
 function Main() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [selectedOption, setSelectedOption] = useState<string>('Oldest');
+  const [selectedOption, setSelectedOption] = useState<string>('Latest');
   const toolCount = DUMMY_DATA.length;
   const [sortedData, setSortedData] = useState(DUMMY_DATA);
   const { selectedTags } = useContext(TagContext);
-  console.log(selectedTags);
+  const { searchText } = useContext(SearchContext);
+
+  console.log(searchText);
 
   const sortData = (option: string) => {
     const sortedResult = [...DUMMY_DATA];
@@ -49,6 +52,10 @@ function Main() {
 
     setSortedData(sortedResult);
   };
+
+  useEffect(() => {
+    sortData(selectedOption);
+  }, []);
 
   const handleOptionSelect = (label: string) => {
     setSelectedOption(label);
@@ -88,7 +95,7 @@ function Main() {
 
       <Grid container className='mt-10' rowGap={6}>
         {sortedData.map(({ id, ...props }) => (
-          <Article {...props} key={id} selectedTags={selectedTags}/>
+          <Article {...props} key={id} selectedTags={selectedTags} searchText={searchText}/>
         ))}
       </Grid>
     </Box>

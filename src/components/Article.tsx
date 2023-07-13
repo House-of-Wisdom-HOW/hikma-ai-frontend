@@ -7,16 +7,32 @@ interface Props {
   description: string
   tags: string[]
   selectedTags: string[]
+  searchText: string
 }
 
-function Article({ src, image, title, description, tags, selectedTags }: Props) {
+function Article({ src, image, title, description, tags, selectedTags, searchText }: Props) {
+  // open article in new tab
   const handleCardClick = () => {
     window.open(src, '_blank');
   };
 
+  // display tags only in selectedTags
   const allTagsIncluded = selectedTags.every((tag) => tags.includes(tag));
-
   if (selectedTags.length > 0 && !allTagsIncluded) {
+    return null;
+  }
+
+  // display articles with relevance to the searchText
+  const someTextIncluded = () => {
+    searchText = searchText.toLowerCase();
+    const textInTag = tags.some((tag) => tag.toLowerCase().includes(searchText));
+    console.log(searchText);
+    const textInTitle = title.toLowerCase().includes(searchText);
+    const textInDescription = description.toLowerCase().includes(searchText);
+
+    return textInTag || textInDescription || textInTitle;
+  };
+  if (searchText.length > 0 && !someTextIncluded()) {
     return null;
   }
 
@@ -38,11 +54,13 @@ function Article({ src, image, title, description, tags, selectedTags }: Props) 
             image={image}
             alt={title}
           />
+
+          {/* Article title and description */}
           <CardContent className='w-full'>
             <Typography sx={{ lineHeight: '1', marginBottom: '8px' }} variant='h6' component='div'>
               {title}
             </Typography>
-            <Typography sx={{ lineHeight: '1', fontSize: '12px' }}>
+            <Typography sx={{ lineHeight: '1', fontSize: '13px', fontWeight: '600' }}>
               {description}
             </Typography>
           </CardContent>
