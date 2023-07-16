@@ -2,11 +2,16 @@ import { FormControlLabel, Checkbox } from '@mui/material';
 
 interface Props {
   label: string
+  onTagSelect: (tag: string) => void
 }
 
-function FilterCheckbox(props: Props) {
+function FilterCheckbox({ label, onTagSelect }: Props) {
+  const handleChange = () => {
+    onTagSelect(label);
+  };
+
   return (
-    <FormControlLabel className='w-full' {...props} control={<Checkbox color='primary'/>} />
+    <FormControlLabel className='w-full' label={label} control={<Checkbox onChange={handleChange} color='primary'/>} />
   );
 };
 

@@ -5,12 +5,17 @@ interface Props {
   image: string
   title: string
   description: string
+  tags: string[]
 }
 
-function Article({ src, image, title, description }: Props) {
+function Article({ src, image, title, description, tags }: Props) {
+  // context for ToolCount
+
+  // open article in new tab
   const handleCardClick = () => {
     window.open(src, '_blank');
   };
+
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
       <Card
@@ -29,11 +34,13 @@ function Article({ src, image, title, description }: Props) {
             image={image}
             alt={title}
           />
+
+          {/* Article title and description */}
           <CardContent className='w-full'>
             <Typography sx={{ lineHeight: '1', marginBottom: '8px' }} variant='h6' component='div'>
               {title}
             </Typography>
-            <Typography sx={{ lineHeight: '1', fontSize: '12px' }}>
+            <Typography sx={{ lineHeight: '1', fontSize: '13px', fontWeight: '600' }}>
               {description}
             </Typography>
           </CardContent>
