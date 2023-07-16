@@ -10,7 +10,9 @@ interface Props {
 function NavButton({ children, ...props }: Props) {
   return (
     <Button color='secondary'>
-      <NavLink {...props} style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })}>
+      <NavLink {...props} style={({ isActive }) => ({
+        textDecoration: isActive ? 'underline' : 'none',
+      })}>
         {children}
       </NavLink>
     </Button>

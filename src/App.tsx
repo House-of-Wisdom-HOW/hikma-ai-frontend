@@ -5,6 +5,7 @@ import Nav from './layout/Nav';
 import SideBar from './layout/SideBar';
 import Main from './layout/Main';
 import About from './layout/About';
+import Add from './layout/Add';
 
 function App () {
   const theme = createTheme({
@@ -41,6 +42,12 @@ function App () {
           <Route path='/about' element={
             <Grid item xs={12}>
               <About />
+            </Grid>
+            } />
+
+          <Route path='/add' element={
+            <Grid item xs={12}>
+              <Add />
             </Grid>
             } />
       </Routes>
