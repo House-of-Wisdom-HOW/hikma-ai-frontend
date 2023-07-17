@@ -7,6 +7,9 @@ import tags from '../data/tags.json';
 import emailjs from 'emailjs-com';
 import ToolInput from '../components/ToolInput';
 
+/* TODO: form validation and confirmation if email is sent or not
+  we can use modals maybe
+*/
 interface FormValues {
   name: string
   email: string
