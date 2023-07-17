@@ -27,6 +27,17 @@ function Add() {
     otherTag: ''
   });
 
+  const emailTemplate = `
+    Name: ${formValues.name}
+    Email: ${formValues.email}
+    Tool Name: ${formValues.toolName}
+    Tool URL: ${formValues.toolURL}
+    Description: ${formValues.description}
+    Tags: ${formValues.tags.join(', ')}
+    Other Tag: ${formValues.otherTag}
+    `;
+
+  // adds changes to formvalues
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormValues((prevValues) => ({
@@ -35,12 +46,22 @@ function Add() {
     }));
   };
 
+  // adds checked tags
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // Use the formValues object to send the email using EmailJS
-    const formData = formValues as unknown as Record<string, unknown>;
+    const emailParams = {
+      from_name: formValues.name,
+      from_email: formValues.email,
+      message: emailTemplate
+    };
     emailjs
-      .send('your_service_id', 'your_template_id', formData, 'your_user_id')
+      .send(
+        process.env.REACT_APP_SERVICE_ID ?? '',
+        process.env.REACT_APP_TEMPLATE_ID ?? '',
+        emailParams,
+        process.env.REACT_APP_PUBLIC_KEY ?? '',
+      )
       .then((response) => {
         console.log('Email sent successfully!', response);
       })
@@ -109,7 +130,6 @@ function Add() {
       />
 
       <Typography variant='h6'>Tool Tags</Typography>
-
       <FormGroup>
         {formTags.map(({ tag, id }) => (
           <FilterCheckbox
@@ -121,13 +141,13 @@ function Add() {
         ))}
       </FormGroup>
 
-        <ToolInput
-          id='otherTag'
-          label='Other'
-          value={formValues.otherTag}
-          handleChange={handleChange}
-          disabled={!formValues.tags.includes('Other')}
-        />
+      <ToolInput
+        id='otherTag'
+        label='Other'
+        value={formValues.otherTag}
+        handleChange={handleChange}
+        disabled={!formValues.tags.includes('Other')}
+      />
 
       <Button
         sx={{ marginTop: '20px', color: 'white', width: '100%' }}
