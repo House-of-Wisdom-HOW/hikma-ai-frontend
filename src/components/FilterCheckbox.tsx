@@ -5,11 +5,16 @@ interface Props {
   className?: string
   checked?: boolean
   onChange?: () => void
+  onTagSelect: (tag: string) => void
 }
 
-function FilterCheckbox(props: Props) {
+function FilterCheckbox({ label, onTagSelect, ...props }: Props) {
+  const handleChange = () => {
+    onTagSelect(label);
+  };
+
   return (
-    <FormControlLabel {...props} control={<Checkbox color='primary'/>} />
+    <FormControlLabel label={label} {...props} control={<Checkbox onChange={handleChange} color='primary'/>} />
   );
 };
 
