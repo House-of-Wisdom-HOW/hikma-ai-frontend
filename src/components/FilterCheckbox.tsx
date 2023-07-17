@@ -4,7 +4,6 @@ interface Props {
   label: string
   className?: string
   checked?: boolean
-  onChange?: () => void
   onTagSelect: (tag: string) => void
 }
 

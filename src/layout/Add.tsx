@@ -140,7 +140,7 @@ function Add() {
             label={tag}
             key={id}
             checked={formValues.tags.includes(tag)}
-            onChange={() => { handleTagChange(tag); }}
+            onTagSelect={() => { handleTagChange(tag); }}
           />
         ))}
       </FormGroup>
