@@ -17,6 +17,7 @@ function ToolInput({ id, value, handleChange, ...props }: props) {
       {...props}
       required
       className='w-full'
+      sx={{ marginBottom: '10px' }}
       id={id}
       name={id}
       variant='standard'

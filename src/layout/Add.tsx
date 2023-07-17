@@ -87,38 +87,34 @@ function Add() {
   };
 
   return (
-    <Box component='form' className='p-4 w-96 h-auto bg-gray m-auto text-center shadow-bown'>
+    <Box component='form' className='p-8 w-11/12 sm:max-w-lg h-auto bg-gray m-auto text-center shadow-bown' style={{ marginTop: '50px' }}>
       <Typography variant='h5'>Add a Tool</Typography>
 
-      <Box className='flex gap-2'>
-        <ToolInput
-          id='name'
-          label='Your Name'
-          value={formValues.name}
-          handleChange={handleChange}
-        />
-        <ToolInput
-          id='email'
-          label='Your Email'
-          value={formValues.email}
-          handleChange={handleChange}
-        />
-      </Box>
+      <ToolInput
+        id='name'
+        label='Your Name'
+        value={formValues.name}
+        handleChange={handleChange}
+      />
+      <ToolInput
+        id='email'
+        label='Your Email'
+        value={formValues.email}
+        handleChange={handleChange}
+      />
 
-      <Box className='flex gap-2'>
-        <ToolInput
-          id='toolName'
-          label='Tool Name'
-          value={formValues.toolName}
-          handleChange={handleChange}
-        />
-        <ToolInput
-          id='toolURL'
-          label='Tool URL'
-          value={formValues.toolURL}
-          handleChange={handleChange}
-        />
-      </Box>
+      <ToolInput
+        id='toolName'
+        label='Tool Name'
+        value={formValues.toolName}
+        handleChange={handleChange}
+      />
+      <ToolInput
+        id='toolURL'
+        label='Tool URL'
+        value={formValues.toolURL}
+        handleChange={handleChange}
+      />
 
       <ToolInput
         id='description'
@@ -130,7 +126,15 @@ function Add() {
       />
 
       <Typography variant='h6'>Tool Tags</Typography>
-      <FormGroup>
+      <FormGroup
+        className='mt-2 gap-3'
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          '@media (min-width: 900px)': {
+            gridTemplateColumns: 'repeat(3, 1fr)',
+          },
+        }}>
         {formTags.map(({ tag, id }) => (
           <FilterCheckbox
             label={tag}
