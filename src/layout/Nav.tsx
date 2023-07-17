@@ -27,8 +27,8 @@ const renderNavItems = (isMobile: boolean, open: boolean, handleClick: (event: M
   return (
     <Box>
       <NavButton to="/">Home</NavButton>
-      <NavButton to="/add">Add</NavButton>
       <NavButton to="/about">About</NavButton>
+      <NavButton to="/add">Add</NavButton>
     </Box>
   );
 };
@@ -71,10 +71,10 @@ function Nav() {
               <NavLink to="/">Home</NavLink>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <NavLink to="/add">Add</NavLink>
+              <NavLink to="/about">About</NavLink>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/add">Add</NavLink>
             </MenuItem>
           </Menu>
         </Toolbar>
