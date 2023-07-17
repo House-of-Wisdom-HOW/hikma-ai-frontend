@@ -2,6 +2,8 @@ import { FormControlLabel, Checkbox } from '@mui/material';
 
 interface Props {
   label: string
+  checked?: boolean
+  onChange?: () => void
 }
 
 function FilterCheckbox(props: Props) {
