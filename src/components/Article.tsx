@@ -40,7 +40,7 @@ function Article({ src, image, title, description, tags }: Props) {
             <Typography sx={{ lineHeight: '1', marginBottom: '8px' }} variant='h6' component='div'>
               {title}
             </Typography>
-            <Typography sx={{ lineHeight: '1', fontSize: '13px', fontWeight: '600' }}>
+            <Typography sx={{ lineHeight: '1', fontSize: '13px', fontWeight: '400' }}>
               {description}
             </Typography>
           </CardContent>

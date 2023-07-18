@@ -10,7 +10,11 @@ interface Props {
 function NavButton({ children, ...props }: Props) {
   return (
     <Button color='secondary'>
-      <NavLink {...props} style={({ isActive }) => (isActive ? { textDecoration: 'underline' } : { textDecoration: 'none' })}>
+      <NavLink
+        {...props}
+        className={({ isActive }) => (isActive ? 'transform transition duration-300 scale-125' : 'transform transition duration-300 scale-100')}
+        style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', })}
+      >
         {children}
       </NavLink>
     </Button>
