@@ -4,6 +4,7 @@ import bg from '../pics/bg.png';
 
 function About() {
   return (
+    // Main wrapper
     <Box className='h-screen'
       sx={{
         '@media (max-height: 700px)': {
@@ -11,6 +12,7 @@ function About() {
         }
       }}
     >
+      {/* bg image */}
       <Box
         className='flex justify-center items-start lg:justify-end px-3'
         sx={{
@@ -20,6 +22,7 @@ function About() {
           backgroundPosition: 'top left',
         }}
         component='div'>
+        {/* The box with info */}
         <Box
           className='flex flex-col mt-12 gap-4 justify-around p-4 rounded text-center bg-brown text-white
           max-w-xl lg:p-6  lg:w-600 lg:mr-20 lg:gap-8 '
@@ -38,6 +41,8 @@ function About() {
           <Typography variant='h5' sx={{ '@media (max-width: 1024px)': { fontSize: '1.2rem' } }}>
             Mission Statement
           </Typography>
+
+          {/* The description, rn is lorem ipsum dummy */}
           <List />
           <List />
           <List />

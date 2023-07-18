@@ -14,6 +14,7 @@ module.exports = {
       },
       boxShadow: {
         sml: '0px 4px 4px #00000040',
+        bown: '2px 3px 4px #e1b15d90'
       },
       spacing: {
         85: '85%',
