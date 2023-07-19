@@ -39,17 +39,18 @@ function App () {
             }>
           </Route>
 
+          <Route path='/add' element={
+            <Grid item xs={12}>
+              <Add />
+            </Grid>
+            } />
+
           <Route path='/about' element={
             <Grid item xs={12}>
               <About />
             </Grid>
             } />
 
-          <Route path='/add' element={
-            <Grid item xs={12}>
-              <Add />
-            </Grid>
-            } />
       </Routes>
 
       </Grid>
