@@ -3,6 +3,7 @@ import List from '../components/List';
 import bg from '../pics/bg.png';
 
 function About() {
+  // TODO: Add link to discord, github, etc, along with details on contributing.
   return (
     // Main wrapper
     <Box className='h-screen'
@@ -36,10 +37,10 @@ function About() {
             },
           }}>
           <Typography variant='h4' sx={{ '@media (max-width: 1024px)': { fontSize: '1.6rem' } }}>
-            Hikma AI by House Of Wisdom
+            Hikma AI
           </Typography>
           <Typography variant='h5' sx={{ '@media (max-width: 1024px)': { fontSize: '1.2rem' } }}>
-            Mission Statement
+            By House of Wisdom
           </Typography>
 
           {/* The description, rn is lorem ipsum dummy */}
