@@ -151,7 +151,7 @@ function Add() {
           />
 
           {/* check boxes */}
-          <Typography variant='h6'>Tool Tags</Typography>
+          <Typography variant='h6'>Tags</Typography>
           <FormGroup
             className='mt-2 gap-3'
             sx={{
