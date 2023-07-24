@@ -15,13 +15,23 @@
     "id": 3
   },
   {
-    "tag":"Education",
+    "tag":"Fiqh",
     "description": null,
     "id": 4
   },
   {
-    "tag":"History",
+    "tag":"Traditions",
     "description": null,
     "id": 5
+  },
+  {
+    "tag":"Education",
+    "description": null,
+    "id": 6
+  },
+  {
+    "tag":"Arabic",
+    "description": null,
+    "id": 7
   }
 ]
