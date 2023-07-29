@@ -43,9 +43,11 @@ function About() {
             By House of Wisdom
           </Typography>
 
-          {/* The description, rn is lorem ipsum dummy */}
+          Hikma AI is a database to collect and organize AI tools to attain Hikmah. The inspiration behind this project is to provide a one-stop location for finding existing AI tools or inspirations for future AI tools.
           <List />
+          This is an open source project, everyone is welcome to contribute to our github repository: https://github.com/House-of-Wisdom-HOW/hikma-ai-frontend.
           <List />
+          This project is inspired from future-tools: https://www.futuretools.io/.
           <List />
         </Box>
       </Box>
