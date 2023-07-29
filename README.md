@@ -2,6 +2,9 @@
 
 Collect and Organize AI tools to attain Hikma.
 
+Hikma AI is a database to collect and organize AI tools to attain Hikmah. The inspiration behind this project is to provide a one-stop location for finding existing AI tools or inspirations for future AI tools.
+
+This project is inspired from [future-tools](https://www.futuretools.io/).
 
 ## Getting Started
 
