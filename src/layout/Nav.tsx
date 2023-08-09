@@ -28,6 +28,7 @@ const renderNavItems = (isMobile: boolean, open: boolean, handleClick: (event: M
     <Box>
       <NavButton to="/">Hikma</NavButton>
       <NavButton to="/add">Add</NavButton>
+      <NavButton to="/future">Ideas</NavButton>
       <NavButton to="/about">About</NavButton>
     </Box>
   );

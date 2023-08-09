@@ -5,7 +5,7 @@ import { Typography, Box, Grid, IconButton, Menu, MenuItem, ListItemIcon } from 
 import SortIcon from '@mui/icons-material/Sort';
 import { Schedule, ArrowUpward, ArrowDownward } from '@mui/icons-material';
 import Article from '../components/Article';
-import DUMMY_DATA from '../data/data.json';
+import DUMMY_DATA from '../data/future.json';
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 
 interface SortOption {
@@ -20,7 +20,7 @@ const sortOptions: SortOption[] = [
   { label: 'Name (Z-A)', icon: <ArrowUpward /> },
 ];
 
-function Main() {
+function Future() {
   // declare
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [selectedOption, setSelectedOption] = useState<string>('Latest');
@@ -131,4 +131,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Future;
