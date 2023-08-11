@@ -13,7 +13,9 @@ function Article({ src, image, title, description, tags }: Props) {
 
   // open article in new tab
   const handleCardClick = () => {
-    window.open(src, '_blank');
+    if (src != null && src !== '') {
+      window.open(src, '_blank');
+    }
   };
 
   return (
