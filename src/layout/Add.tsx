@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { useState, ChangeEvent, FormEvent } from 'react';
-import { Box, Typography, FormGroup, Button } from '@mui/material';
+import { Box, Typography, FormGroup, Button, FormControl, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 import FilterCheckbox from '../components/FilterCheckbox';
 import LoadingSpinner from '../components/LoadingSpinner';
 import tags from '../data/tags.json';
@@ -11,6 +11,7 @@ import ToolInput from '../components/ToolInput';
   we can use modals maybe
 */
 interface FormValues {
+  type: string
   name: string
   email: string
   toolName: string
@@ -24,6 +25,7 @@ function Add() {
   const formTags = [...tags, { tag: 'Other', id: tags.length + 1 }];
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formValues, setFormValues] = useState<FormValues>({
+    type: '',
     name: '',
     email: '',
     toolName: '',
@@ -76,6 +78,7 @@ function Add() {
         });
       // set back to default
       setFormValues({
+        type: '',
         name: '',
         email: '',
         toolName: '',
@@ -115,6 +118,19 @@ function Add() {
       {!isLoading && (
         <>
           <Typography variant='h5'>Add a Tool</Typography>
+
+          <FormControl>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              name="type"
+              value={formValues.type}
+              onChange={handleChange}
+              row
+            >
+              <FormControlLabel value="existing" control={<Radio />} label="Existing" />
+              <FormControlLabel value="future" control={<Radio />} label="Future" />
+            </RadioGroup>
+          </FormControl>
 
           {/* Name, Email, tool name and URL input fields */}
           <ToolInput
