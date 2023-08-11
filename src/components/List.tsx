@@ -11,9 +11,6 @@ function List() {
         },
       }}
     >
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus voluptate nostrum
-      neque natus sunt beatae perspiciatis necessitatibus quaerat. Iusto placeat mollitia est
-      neque nobis cum fuga blanditiis illo hic tempora.
     </Typography>
   );
 }

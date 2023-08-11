@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Nav from './layout/Nav';
 import SideBar from './layout/SideBar';
 import Main from './layout/Main';
+import Future from './layout/Future';
 import About from './layout/About';
 import Add from './layout/Add';
 
@@ -50,6 +51,18 @@ function App () {
               <About />
             </Grid>
             } />
+
+          <Route path='/future' element={
+            <>
+              <Grid item xs={12} md={2}>
+                <SideBar />
+              </Grid>
+              <Grid item xs={12} md={10}>
+                <Future />
+              </Grid>
+            </>
+            }>
+          </Route>
 
       </Routes>
 
