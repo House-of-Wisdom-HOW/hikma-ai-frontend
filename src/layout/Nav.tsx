@@ -72,6 +72,9 @@ function Nav() {
               <NavLink to="/">Hikma</NavLink>
             </MenuItem>
             <MenuItem onClick={handleClose}>
+              <NavLink to="/future">Ideas</NavLink>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
               <NavLink to="/add">Add</NavLink>
             </MenuItem>
             <MenuItem onClick={handleClose}>
